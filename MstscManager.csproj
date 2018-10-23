@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSVFileHelper.cs" />
-    <Compile Include="EcanQQ.cs" />
     <Compile Include="FormConfig.cs">
       <SubType>Form</SubType>
     </Compile>
