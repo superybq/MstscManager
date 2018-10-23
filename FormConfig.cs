@@ -14,10 +14,11 @@ namespace MstscManager
     public partial class FormConfig : Form
     {
         public FormConfig()
-        {            
+        {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
-            ServerConfig.Load(dataGridView1);
+            ServerConfig.LoadGrid(dataGridView1,"All");
+            //ServerConfig.LoadDDL(ddlGroup);
         }
 
         private void btnSave_Click(object sender, EventArgs e)

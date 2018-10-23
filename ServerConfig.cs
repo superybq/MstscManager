@@ -13,7 +13,7 @@ namespace MstscManager
     public static class ServerConfig
     {
 
-        public static void Load(DataGridView dataGridView)
+        public static void LoadGrid(DataGridView dataGridView, string group)
         {
             if (File.Exists("Server.csv"))
             {
@@ -28,10 +28,36 @@ namespace MstscManager
                 }
 
                 dt.DefaultView.Sort = "OrderIndex ASC";
-                dataGridView.DataSource = dt.DefaultView;
-
+                if (string.Compare(group, "All", false) != 0)
+                {
+                    dt.DefaultView.RowFilter = string.Format("Group = '{0}'", group);
+                    dataGridView.DataSource = dt.DefaultView;
+                }
+                else
+                {
+                    dataGridView.DataSource = dt.DefaultView;
+                }
             }
         }
 
+        public static void LoadDDLGroup(ComboBox ddl)
+        {
+            List<string> groupList = new List<string>();
+            groupList.Add("All");
+            if (File.Exists("Server.csv"))
+            {
+                DataTable dt = CSVFileHelper.ReadCSV("Server.csv");
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (groupList.Contains(row["Group"].ToString()))
+                    {
+                        continue;
+                    }
+                    groupList.Add(row["Group"].ToString());
+                    //groupList[row["Group"].ToString()] = "";
+                }
+            }
+            ddl.DataSource = groupList;
+        }
     }
 }

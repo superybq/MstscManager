@@ -30,8 +30,14 @@ namespace MstscManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnConfig = new System.Windows.Forms.Button();
+            this.btnBatOpen = new System.Windows.Forms.Button();
+            this.txtDesktopwidth = new System.Windows.Forms.TextBox();
+            this.txtDesktopheight = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,12 +46,9 @@ namespace MstscManager
             this.ServerUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServerDomain = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServerPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnConfig = new System.Windows.Forms.Button();
-            this.btnBatOpen = new System.Windows.Forms.Button();
-            this.txtDesktopwidth = new System.Windows.Forms.TextBox();
-            this.txtDesktopheight = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ddlGroup = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -67,20 +70,84 @@ namespace MstscManager
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(542, 450);
+            this.dataGridView1.Size = new System.Drawing.Size(427, 561);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btnConfig
+            // 
+            this.btnConfig.Location = new System.Drawing.Point(49, 167);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(54, 23);
+            this.btnConfig.TabIndex = 1;
+            this.btnConfig.Text = "配置";
+            this.btnConfig.UseVisualStyleBackColor = true;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
+            // 
+            // btnBatOpen
+            // 
+            this.btnBatOpen.Location = new System.Drawing.Point(28, 138);
+            this.btnBatOpen.Name = "btnBatOpen";
+            this.btnBatOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnBatOpen.TabIndex = 2;
+            this.btnBatOpen.Text = "批量打开";
+            this.btnBatOpen.UseVisualStyleBackColor = true;
+            this.btnBatOpen.Click += new System.EventHandler(this.btnBatOpen_Click);
+            // 
+            // txtDesktopwidth
+            // 
+            this.txtDesktopwidth.Location = new System.Drawing.Point(3, 27);
+            this.txtDesktopwidth.Name = "txtDesktopwidth";
+            this.txtDesktopwidth.Size = new System.Drawing.Size(100, 21);
+            this.txtDesktopwidth.TabIndex = 3;
+            this.txtDesktopwidth.Text = "1920";
+            this.txtDesktopwidth.TextChanged += new System.EventHandler(this.txtDesktopwidth_TextChanged);
+            // 
+            // txtDesktopheight
+            // 
+            this.txtDesktopheight.Location = new System.Drawing.Point(3, 55);
+            this.txtDesktopheight.Name = "txtDesktopheight";
+            this.txtDesktopheight.Size = new System.Drawing.Size(100, 21);
+            this.txtDesktopheight.TabIndex = 4;
+            this.txtDesktopheight.Text = "1080";
+            this.txtDesktopheight.TextChanged += new System.EventHandler(this.txtDesktopheight_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "分辨率";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.Controls.Add(this.ddlGroup);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnConfig);
+            this.panel1.Controls.Add(this.txtDesktopheight);
+            this.panel1.Controls.Add(this.btnBatOpen);
+            this.panel1.Controls.Add(this.txtDesktopwidth);
+            this.panel1.Location = new System.Drawing.Point(434, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(109, 561);
+            this.panel1.TabIndex = 6;
             // 
             // Index
             // 
             this.Index.DataPropertyName = "Index";
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.Index.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.Index.DefaultCellStyle = dataGridViewCellStyle2;
             this.Index.HeaderText = "排序";
             this.Index.Name = "Index";
             this.Index.ReadOnly = true;
+            this.Index.Visible = false;
             this.Index.Width = 54;
             // 
             // Group
@@ -89,7 +156,8 @@ namespace MstscManager
             this.Group.HeaderText = "分组";
             this.Group.Name = "Group";
             this.Group.ReadOnly = true;
-            this.Group.Width = 54;
+            this.Group.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Group.Width = 35;
             // 
             // ServerName
             // 
@@ -97,7 +165,8 @@ namespace MstscManager
             this.ServerName.HeaderText = "名称";
             this.ServerName.Name = "ServerName";
             this.ServerName.ReadOnly = true;
-            this.ServerName.Width = 54;
+            this.ServerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ServerName.Width = 35;
             // 
             // ServerIp
             // 
@@ -105,7 +174,8 @@ namespace MstscManager
             this.ServerIp.HeaderText = "服务器";
             this.ServerIp.Name = "ServerIp";
             this.ServerIp.ReadOnly = true;
-            this.ServerIp.Width = 66;
+            this.ServerIp.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ServerIp.Width = 47;
             // 
             // btnOpen
             // 
@@ -144,69 +214,32 @@ namespace MstscManager
             this.ServerPassword.Visible = false;
             this.ServerPassword.Width = 54;
             // 
-            // btnConfig
+            // ddlGroup
             // 
-            this.btnConfig.Location = new System.Drawing.Point(594, 403);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(54, 23);
-            this.btnConfig.TabIndex = 1;
-            this.btnConfig.Text = "配置";
-            this.btnConfig.UseVisualStyleBackColor = true;
-            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
-            // 
-            // btnBatOpen
-            // 
-            this.btnBatOpen.Location = new System.Drawing.Point(573, 344);
-            this.btnBatOpen.Name = "btnBatOpen";
-            this.btnBatOpen.Size = new System.Drawing.Size(75, 23);
-            this.btnBatOpen.TabIndex = 2;
-            this.btnBatOpen.Text = "批量打开";
-            this.btnBatOpen.UseVisualStyleBackColor = true;
-            this.btnBatOpen.Click += new System.EventHandler(this.btnBatOpen_Click);
-            // 
-            // txtDesktopwidth
-            // 
-            this.txtDesktopwidth.Location = new System.Drawing.Point(548, 36);
-            this.txtDesktopwidth.Name = "txtDesktopwidth";
-            this.txtDesktopwidth.Size = new System.Drawing.Size(100, 21);
-            this.txtDesktopwidth.TabIndex = 3;
-            this.txtDesktopwidth.Text = "1920";
-            this.txtDesktopwidth.TextChanged += new System.EventHandler(this.txtDesktopwidth_TextChanged);
-            // 
-            // txtDesktopheight
-            // 
-            this.txtDesktopheight.Location = new System.Drawing.Point(548, 64);
-            this.txtDesktopheight.Name = "txtDesktopheight";
-            this.txtDesktopheight.Size = new System.Drawing.Size(100, 21);
-            this.txtDesktopheight.TabIndex = 4;
-            this.txtDesktopheight.Text = "1080";
-            this.txtDesktopheight.TextChanged += new System.EventHandler(this.txtDesktopheight_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(548, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "分辨率";
+            this.ddlGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlGroup.FormattingEnabled = true;
+            this.ddlGroup.Location = new System.Drawing.Point(3, 82);
+            this.ddlGroup.Name = "ddlGroup";
+            this.ddlGroup.Size = new System.Drawing.Size(100, 20);
+            this.ddlGroup.TabIndex = 6;
+            this.ddlGroup.SelectedIndexChanged += new System.EventHandler(this.ddlGroup_SelectedIndexChanged);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtDesktopheight);
-            this.Controls.Add(this.txtDesktopwidth);
-            this.Controls.Add(this.btnBatOpen);
-            this.Controls.Add(this.btnConfig);
+            this.ClientSize = new System.Drawing.Size(541, 561);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
+            this.MaximumSize = new System.Drawing.Size(557, 1080);
+            this.MinimumSize = new System.Drawing.Size(557, 600);
             this.Name = "FormMain";
             this.Text = "远程桌面管理";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -219,6 +252,7 @@ namespace MstscManager
         private System.Windows.Forms.TextBox txtDesktopwidth;
         private System.Windows.Forms.TextBox txtDesktopheight;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Index;
         private System.Windows.Forms.DataGridViewTextBoxColumn Group;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServerName;
@@ -227,6 +261,7 @@ namespace MstscManager
         private System.Windows.Forms.DataGridViewTextBoxColumn ServerUserName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServerDomain;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServerPassword;
+        private System.Windows.Forms.ComboBox ddlGroup;
     }
 }
 

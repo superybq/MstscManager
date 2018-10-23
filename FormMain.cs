@@ -19,7 +19,15 @@ namespace MstscManager
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
-            ServerConfig.Load(dataGridView1);
+            try
+            {
+                ServerConfig.LoadGrid(dataGridView1, "All");
+                ServerConfig.LoadDDLGroup(ddlGroup);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             try
             {
                 Configuration cfa = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoaming);
@@ -101,7 +109,8 @@ namespace MstscManager
         {
             FormConfig formConfig = new FormConfig();
             formConfig.ShowDialog();
-            ServerConfig.Load(dataGridView1);
+            ServerConfig.LoadGrid(dataGridView1, ddlGroup.SelectedValue.ToString());
+            ServerConfig.LoadDDLGroup(ddlGroup);
         }
 
         private void btnBatOpen_Click(object sender, EventArgs e)
@@ -153,6 +162,18 @@ namespace MstscManager
             }
 
             cfa.Save();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            this.Left = 0;
+            this.Top = 0;
+            this.Height = Screen.PrimaryScreen.WorkingArea.Height;
+        }
+
+        private void ddlGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ServerConfig.LoadGrid(dataGridView1, ddlGroup.SelectedValue.ToString());
         }
     }
 }
