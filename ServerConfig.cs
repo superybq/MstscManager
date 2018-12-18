@@ -12,12 +12,15 @@ namespace MstscManager
 {
     public static class ServerConfig
     {
-
+        private static DataTable dt = new DataTable();
         public static void LoadGrid(DataGridView dataGridView, string group)
         {
-            if (File.Exists("Server.csv"))
+            if (File.Exists("Server.dat"))
             {
-                DataTable dt = CSVFileHelper.ReadCSV("Server.csv");
+                string csvFileName = System.IO.Path.GetTempFileName();
+                DESFileClass.DecryptFile("Server.dat", csvFileName, "c2Soecqg9f5GXCflI7c6wBNq4fAXiZcS");
+                dt = CSVFileHelper.ReadCSV(csvFileName);
+                File.Delete(csvFileName);
                 if (!dt.Columns.Contains("OrderIndex"))
                 {
                     dt.Columns.Add("OrderIndex", typeof(Int32));
@@ -44,9 +47,9 @@ namespace MstscManager
         {
             List<string> groupList = new List<string>();
             groupList.Add("All");
-            if (File.Exists("Server.csv"))
+            if (dt != null)
             {
-                DataTable dt = CSVFileHelper.ReadCSV("Server.csv");
+                //DataTable dt = CSVFileHelper.ReadCSV("Server.csv");
                 foreach (DataRow row in dt.Rows)
                 {
                     if (groupList.Contains(row["Group"].ToString()))

@@ -25,7 +25,10 @@ namespace MstscManager
         {
             DataTable dt = GetDgvToTable(dataGridView1);
             dt.DefaultView.Sort = "index";
-            CSVFileHelper.SaveCSV(dt, "Server.csv");
+            string csvFileName = System.IO.Path.GetTempFileName();
+            CSVFileHelper.SaveCSV(dt, csvFileName);
+            DESFileClass.EncryptFile(csvFileName, "Server.dat", "c2Soecqg9f5GXCflI7c6wBNq4fAXiZcS");
+            File.Delete(csvFileName);
             this.Close();
         }
 
