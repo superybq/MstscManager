@@ -15,6 +15,11 @@ namespace MstscManager
         private static DataTable dt = new DataTable();
         public static void LoadGrid(DataGridView dataGridView, string group)
         {
+            if (File.Exists("Server.csv"))
+            {
+                DESFileClass.EncryptFile("Server.csv", "Server.dat", "c2Soecqg9f5GXCflI7c6wBNq4fAXiZcS");
+                File.Delete("Server.csv");
+            }
             if (File.Exists("Server.dat"))
             {
                 string csvFileName = System.IO.Path.GetTempFileName();
