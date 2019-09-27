@@ -32,7 +32,9 @@ namespace MstscManager
                 }
                 foreach (DataRow row in dt.Rows)
                 {
-                    row["OrderIndex"] = Convert.ToInt32(row["Index"]);
+                    int index = 0;
+                    int.TryParse(row["Index"].ToString(), out index);
+                    row["OrderIndex"] = index;
                 }
 
                 dt.DefaultView.Sort = "OrderIndex ASC";
