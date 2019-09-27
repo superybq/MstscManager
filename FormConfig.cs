@@ -17,7 +17,7 @@ namespace MstscManager
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
-            ServerConfig.LoadGrid(dataGridView1,"All");
+            ServerConfig.LoadGrid(dataGridView1, "All");
             //ServerConfig.LoadDDL(ddlGroup);
         }
 
@@ -49,6 +49,10 @@ namespace MstscManager
                 if (string.IsNullOrEmpty(Convert.ToString(dgv.Rows[count].Cells["Group"].Value)))
                 {
                     continue;
+                }
+                if (string.IsNullOrEmpty(Convert.ToString(dgv.Rows[count].Cells["Index"].Value)))
+                {
+                    dgv.Rows[count].Cells["Index"].Value = "0";
                 }
                 DataRow dr = dt.NewRow();
                 for (int countsub = 0; countsub < dgv.Columns.Count; countsub++)
