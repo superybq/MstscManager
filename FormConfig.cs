@@ -27,6 +27,11 @@ namespace MstscManager
             dt.DefaultView.Sort = "index";
             string csvFileName = System.IO.Path.GetTempFileName();
             CSVFileHelper.SaveCSV(dt, csvFileName);
+            if (File.Exists("Server.dat.bak"))
+            {
+                File.Delete("Server.dat.bak");
+            }
+            File.Move("Server.dat", "Server.dat.bak");
             DESFileClass.EncryptFile(csvFileName, "Server.dat", "c2Soecqg9f5GXCflI7c6wBNq4fAXiZcS");
             File.Delete(csvFileName);
             this.Close();
