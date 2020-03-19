@@ -19,12 +19,13 @@ namespace MstscManager
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
+            ddlColor.SelectedIndex = 4;
             try
             {
                 ServerConfig.LoadGrid(dataGridView1, "All");
                 ServerConfig.LoadDDLGroup(ddlGroup);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -74,13 +75,15 @@ namespace MstscManager
 
         private void RunOpenMstsc(string ip, string userName, string password, string domain, string showName)
         {
+            string color = "32";
+            color = ddlColor.SelectedItem.ToString();
             string str = "start mstsc /v:" + ip;
             string filePath = Path.Combine(Path.GetTempPath(), showName + ".rdp");
             if (!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(password))
             {
                 FileStream fs = new FileStream(filePath, System.IO.FileMode.Create, System.IO.FileAccess.Write);
                 StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.UTF8);
-                sw.Write(RDPData.GetRDPData(ip, userName, password, domain, txtDesktopwidth.Text, txtDesktopheight.Text));
+                sw.Write(RDPData.GetRDPData(ip, userName, password, domain, txtDesktopwidth.Text, txtDesktopheight.Text, color));
                 sw.Close();
                 fs.Close();
                 str = "start mstsc " + filePath + " /console /v:" + ip;
@@ -102,7 +105,6 @@ namespace MstscManager
 
             p.WaitForExit();
             p.Close();
-
         }
 
         private void btnConfig_Click(object sender, EventArgs e)

@@ -30,14 +30,8 @@ namespace MstscManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnConfig = new System.Windows.Forms.Button();
-            this.btnBatOpen = new System.Windows.Forms.Button();
-            this.txtDesktopwidth = new System.Windows.Forms.TextBox();
-            this.txtDesktopheight = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.Index = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Group = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +40,16 @@ namespace MstscManager
             this.ServerUserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServerDomain = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServerPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnConfig = new System.Windows.Forms.Button();
+            this.btnBatOpen = new System.Windows.Forms.Button();
+            this.txtDesktopwidth = new System.Windows.Forms.TextBox();
+            this.txtDesktopheight = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.ddlGroup = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ddlColor = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -76,74 +79,12 @@ namespace MstscManager
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // btnConfig
-            // 
-            this.btnConfig.Location = new System.Drawing.Point(49, 167);
-            this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(54, 23);
-            this.btnConfig.TabIndex = 1;
-            this.btnConfig.Text = "配置";
-            this.btnConfig.UseVisualStyleBackColor = true;
-            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
-            // 
-            // btnBatOpen
-            // 
-            this.btnBatOpen.Location = new System.Drawing.Point(28, 138);
-            this.btnBatOpen.Name = "btnBatOpen";
-            this.btnBatOpen.Size = new System.Drawing.Size(75, 23);
-            this.btnBatOpen.TabIndex = 2;
-            this.btnBatOpen.Text = "批量打开";
-            this.btnBatOpen.UseVisualStyleBackColor = true;
-            this.btnBatOpen.Click += new System.EventHandler(this.btnBatOpen_Click);
-            // 
-            // txtDesktopwidth
-            // 
-            this.txtDesktopwidth.Location = new System.Drawing.Point(3, 27);
-            this.txtDesktopwidth.Name = "txtDesktopwidth";
-            this.txtDesktopwidth.Size = new System.Drawing.Size(100, 21);
-            this.txtDesktopwidth.TabIndex = 3;
-            this.txtDesktopwidth.Text = "1920";
-            this.txtDesktopwidth.TextChanged += new System.EventHandler(this.txtDesktopwidth_TextChanged);
-            // 
-            // txtDesktopheight
-            // 
-            this.txtDesktopheight.Location = new System.Drawing.Point(3, 55);
-            this.txtDesktopheight.Name = "txtDesktopheight";
-            this.txtDesktopheight.Size = new System.Drawing.Size(100, 21);
-            this.txtDesktopheight.TabIndex = 4;
-            this.txtDesktopheight.Text = "1080";
-            this.txtDesktopheight.TextChanged += new System.EventHandler(this.txtDesktopheight_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "分辨率";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.Controls.Add(this.ddlGroup);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnConfig);
-            this.panel1.Controls.Add(this.txtDesktopheight);
-            this.panel1.Controls.Add(this.btnBatOpen);
-            this.panel1.Controls.Add(this.txtDesktopwidth);
-            this.panel1.Location = new System.Drawing.Point(434, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(109, 561);
-            this.panel1.TabIndex = 6;
-            // 
             // Index
             // 
             this.Index.DataPropertyName = "Index";
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.Index.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.Index.DefaultCellStyle = dataGridViewCellStyle4;
             this.Index.HeaderText = "排序";
             this.Index.Name = "Index";
             this.Index.ReadOnly = true;
@@ -214,15 +155,113 @@ namespace MstscManager
             this.ServerPassword.Visible = false;
             this.ServerPassword.Width = 54;
             // 
+            // btnConfig
+            // 
+            this.btnConfig.Location = new System.Drawing.Point(49, 195);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(54, 23);
+            this.btnConfig.TabIndex = 1;
+            this.btnConfig.Text = "配置";
+            this.btnConfig.UseVisualStyleBackColor = true;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
+            // 
+            // btnBatOpen
+            // 
+            this.btnBatOpen.Location = new System.Drawing.Point(28, 166);
+            this.btnBatOpen.Name = "btnBatOpen";
+            this.btnBatOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnBatOpen.TabIndex = 2;
+            this.btnBatOpen.Text = "批量打开";
+            this.btnBatOpen.UseVisualStyleBackColor = true;
+            this.btnBatOpen.Click += new System.EventHandler(this.btnBatOpen_Click);
+            // 
+            // txtDesktopwidth
+            // 
+            this.txtDesktopwidth.Location = new System.Drawing.Point(3, 27);
+            this.txtDesktopwidth.Name = "txtDesktopwidth";
+            this.txtDesktopwidth.Size = new System.Drawing.Size(100, 21);
+            this.txtDesktopwidth.TabIndex = 3;
+            this.txtDesktopwidth.Text = "1920";
+            this.txtDesktopwidth.TextChanged += new System.EventHandler(this.txtDesktopwidth_TextChanged);
+            // 
+            // txtDesktopheight
+            // 
+            this.txtDesktopheight.Location = new System.Drawing.Point(3, 55);
+            this.txtDesktopheight.Name = "txtDesktopheight";
+            this.txtDesktopheight.Size = new System.Drawing.Size(100, 21);
+            this.txtDesktopheight.TabIndex = 4;
+            this.txtDesktopheight.Text = "1080";
+            this.txtDesktopheight.TextChanged += new System.EventHandler(this.txtDesktopheight_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "分辨率";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.Controls.Add(this.ddlColor);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.ddlGroup);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnConfig);
+            this.panel1.Controls.Add(this.txtDesktopheight);
+            this.panel1.Controls.Add(this.btnBatOpen);
+            this.panel1.Controls.Add(this.txtDesktopwidth);
+            this.panel1.Location = new System.Drawing.Point(434, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(109, 561);
+            this.panel1.TabIndex = 6;
+            // 
             // ddlGroup
             // 
             this.ddlGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlGroup.FormattingEnabled = true;
-            this.ddlGroup.Location = new System.Drawing.Point(3, 82);
+            this.ddlGroup.Location = new System.Drawing.Point(5, 140);
             this.ddlGroup.Name = "ddlGroup";
-            this.ddlGroup.Size = new System.Drawing.Size(100, 20);
+            this.ddlGroup.Size = new System.Drawing.Size(98, 20);
             this.ddlGroup.TabIndex = 6;
             this.ddlGroup.SelectedIndexChanged += new System.EventHandler(this.ddlGroup_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(5, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "色彩";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 122);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "分组";
+            // 
+            // ddlColor
+            // 
+            this.ddlColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ddlColor.FormattingEnabled = true;
+            this.ddlColor.Items.AddRange(new object[] {
+            "8",
+            "15",
+            "16",
+            "24",
+            "32"});
+            this.ddlColor.Location = new System.Drawing.Point(5, 99);
+            this.ddlColor.Name = "ddlColor";
+            this.ddlColor.Size = new System.Drawing.Size(98, 20);
+            this.ddlColor.TabIndex = 9;
             // 
             // FormMain
             // 
@@ -262,6 +301,9 @@ namespace MstscManager
         private System.Windows.Forms.DataGridViewTextBoxColumn ServerDomain;
         private System.Windows.Forms.DataGridViewTextBoxColumn ServerPassword;
         private System.Windows.Forms.ComboBox ddlGroup;
+        private System.Windows.Forms.ComboBox ddlColor;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
 

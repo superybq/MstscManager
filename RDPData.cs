@@ -13,7 +13,7 @@ namespace MstscManager
 use multimon:i:0
 desktopwidth:i:{4}
 desktopheight:i:{5}
-session bpp:i:32
+session bpp:i:{6}
 winposstr:s:0,1,0,0,1920,1040
 compression:i:1
 keyboardhook:i:2
@@ -61,7 +61,7 @@ domain:s:{3}
 password 51:b:{2}
 ";
 
-        public static string GetRDPData(string address, string username, string password, string domain, string desktopwidth,string desktopheight)
+        public static string GetRDPData(string address, string username, string password, string domain, string desktopwidth, string desktopheight, string color)
         {
             byte[] secret = Encoding.Unicode.GetBytes(password);
             byte[] encryptedSecret = RDPCodeTools.Protect(secret);
@@ -70,8 +70,8 @@ password 51:b:{2}
             {
                 res += b.ToString("X2");
             }
-            
-            return string.Format(data, address, username, res, domain, desktopwidth, desktopheight);
+
+            return string.Format(data, address, username, res, domain, desktopwidth, desktopheight, color);
         }
     }
 }
