@@ -1,0 +1,48 @@
+[
+  {
+    "outboundTag": "block",
+    "domain": [
+      "geosite:category-ads-all",
+      "mousegesturesapi.com",
+      "cf-se.com"
+    ]
+  },
+  {
+    "outboundTag": "direct",
+    "ip": [
+      "geoip:private",
+      "geoip:cn"
+    ],
+    "domain": [
+      "geosite:private",
+      "geosite:cn",
+      "geosite:apple-cn",
+      "geosite:google-cn",
+      "geosite:tld-cn",
+      "geosite:category-games@cn"
+    ]
+  },
+  {
+    "outboundTag": "direct",
+    "domain": [
+      "twitch.tv",
+      "hls.ttvnw.net",
+      "static.twitchcdn.net",
+      "production.assets.clips.twitchcdn.net",
+      "ext-twitch.tv",
+      "usher.ttvnw.net",
+      "github.com",
+      "gvt1.com"
+    ]
+  },
+  {
+    "outboundTag": "proxy",
+    "domain": [
+      "geosite:geolocation-!cn"
+    ]
+  },
+  {
+    "port": "0-65535",
+    "outboundTag": "proxy"
+  }
+]
