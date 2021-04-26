@@ -2,7 +2,7 @@
   {
     "outboundTag": "proxy",
     "domain": [
-      "#ÒÔÏÂÈýÐÐÊÇGitHubÍøÕ¾£¬ÎªÁË²»Ó°ÏìÏÂÔØËÙ¶È×ß´úÀí",
+      "#ä»¥ä¸‹ä¸‰è¡Œæ˜¯GitHubç½‘ç«™ï¼Œä¸ºäº†ä¸å½±å“ä¸‹è½½é€Ÿåº¦èµ°ä»£ç†",
       "#github.com",
       "#githubassets.com",
       "#githubusercontent.com"
@@ -11,7 +11,7 @@
   {
     "outboundTag": "block",
     "domain": [
-      "#×èÖ¹CrxMouseÊó±êÊÖÊÆÊÕ¼¯ÉÏÍøÊý¾Ý",
+      "#é˜»æ­¢CrxMouseé¼ æ ‡æ‰‹åŠ¿æ”¶é›†ä¸Šç½‘æ•°æ®",
       "mousegesturesapi.com"
     ]
   },
@@ -24,30 +24,35 @@
       "letsencrypt.org",
       "adblockplus.org",
       "safesugar.net",
-      "#ÏÂÁ½ÐÐ¹È¸è¹ã¸æ",
+      "#ä¸‹ä¸¤è¡Œè°·æ­Œå¹¿å‘Š",
       "googleads.g.doubleclick.net",
       "adservice.google.com",
-      "#¡¾ÒÔÏÂÈ«²¿ÊÇgeoÔ¤¶¨ÒåÓòÃûÁÐ±í¡¿",
-      "#ÏÂÒ»ÐÐÊÇËùÓÐË½ÓÐÓòÃû",
+      "#ã€ä»¥ä¸‹å…¨éƒ¨æ˜¯geoé¢„å®šä¹‰åŸŸååˆ—è¡¨ã€‘",
+      "#ä¸‹ä¸€è¡Œæ˜¯æ‰€æœ‰ç§æœ‰åŸŸå",
       "geosite:private",
-      "#ÏÂÒ»ÐÐ°üº¬³£¼û´óÂ½Õ¾µãÓòÃûºÍCNNIC¹ÜÀíµÄ´óÂ½ÓòÃû£¬¼´geolocation-cnºÍtld-cnµÄºÏ¼¯",
+      "#ä¸‹ä¸€è¡ŒåŒ…å«å¸¸è§å¤§é™†ç«™ç‚¹åŸŸåå’ŒCNNICç®¡ç†çš„å¤§é™†åŸŸåï¼Œå³geolocation-cnå’Œtld-cnçš„åˆé›†",
       "geosite:cn",
-      "#ÏÂÒ»ÐÐ°üº¬ËùÓÐAdobeÆìÏÂÓòÃû",
+      "#ä¸‹ä¸€è¡ŒåŒ…å«æ‰€æœ‰Adobeæ——ä¸‹åŸŸå",
       "geosite:adobe",
-      "#ÏÂÒ»ÐÐ°üº¬ËùÓÐAdobeÕý°æ¼¤»îÓòÃû",
+      "#ä¸‹ä¸€è¡ŒåŒ…å«æ‰€æœ‰Adobeæ­£ç‰ˆæ¿€æ´»åŸŸå",
       "geosite:adobe-activation",
-      "#ÏÂÒ»ÐÐ°üº¬ËùÓÐÎ¢ÈíÆìÏÂÓòÃû",
+      "#ä¸‹ä¸€è¡ŒåŒ…å«æ‰€æœ‰å¾®è½¯æ——ä¸‹åŸŸå",
       "geosite:microsoft",
-      "#ÏÂÒ»ÐÐ°üº¬Î¢ÈímsnÏà¹ØÓòÃûÉÙÊýÓëÉÏÒ»ÐÐÎ¢ÈíÁÐ±íÖØ¸´",
+      "#ä¸‹ä¸€è¡ŒåŒ…å«å¾®è½¯msnç›¸å…³åŸŸåå°‘æ•°ä¸Žä¸Šä¸€è¡Œå¾®è½¯åˆ—è¡¨é‡å¤",
       "geosite:msn",
-      "#ÏÂÒ»ÐÐ°üº¬ËùÓÐÆ»¹ûÆìÏÂÓòÃû",
+      "#ä¸‹ä¸€è¡ŒåŒ…å«æ‰€æœ‰è‹¹æžœæ——ä¸‹åŸŸå",
       "geosite:apple",
-      "#ÏÂÒ»ÐÐ°üº¬ËùÓÐ¹ã¸æÆ½Ì¨¡¢Ìá¹©ÉÌÓòÃû",
+      "#ä¸‹ä¸€è¡ŒåŒ…å«æ‰€æœ‰å¹¿å‘Šå¹³å°ã€æä¾›å•†åŸŸå",
       "geosite:category-ads-all",
-      "#ÏÂÒ»ÐÐ°üº¬¿ÉÖ±Á¬·ÃÎÊ¹È¸èÍøÖ·£¬ÐèÒªÌæ»»Îª¼ÓÇ¿°æGEOÎÄ¼þ£¬ÈçÒÑÊÖ¶¯¸üÐÂÎª¼ÓÇ¿°æGEOÎÄ¼þ£¬É¾³ý´ËÐÐÇ°ÃæµÄ#ºÅÊ¹ÆäÉúÐ§",
+      "#ä¸‹ä¸€è¡ŒåŒ…å«å¯ç›´è¿žè®¿é—®è°·æ­Œç½‘å€ï¼Œéœ€è¦æ›¿æ¢ä¸ºåŠ å¼ºç‰ˆGEOæ–‡ä»¶ï¼Œå¦‚å·²æ‰‹åŠ¨æ›´æ–°ä¸ºåŠ å¼ºç‰ˆGEOæ–‡ä»¶ï¼Œåˆ é™¤æ­¤è¡Œå‰é¢çš„#å·ä½¿å…¶ç”Ÿæ•ˆ",
       "#geosite:google-cn",
-      "#ÏÂÒ»ÐÐ°üº¬¿ÉÖ±Á¬·ÃÎÊÆ»¹ûÍøÖ·£¬ÐèÒªÌæ»»Îª¼ÓÇ¿°æGEOÎÄ¼þ£¬ÈçÒÑÊÖ¶¯¸üÐÂÎª¼ÓÇ¿°æGEOÎÄ¼þ£¬É¾³ý´ËÐÐÇ°ÃæµÄ#ºÅÊ¹ÆäÉúÐ§",
-      "#geosite:apple-cn"
+      "#ä¸‹ä¸€è¡ŒåŒ…å«å¯ç›´è¿žè®¿é—®è‹¹æžœç½‘å€ï¼Œéœ€è¦æ›¿æ¢ä¸ºåŠ å¼ºç‰ˆGEOæ–‡ä»¶ï¼Œå¦‚å·²æ‰‹åŠ¨æ›´æ–°ä¸ºåŠ å¼ºç‰ˆGEOæ–‡ä»¶ï¼Œåˆ é™¤æ­¤è¡Œå‰é¢çš„#å·ä½¿å…¶ç”Ÿæ•ˆ",
+      "#geosite:apple-cn",
+      "#game",
+      "geosite:category-games@cn",
+      "steampowered.com",
+      "steamcommunity.com",
+      "steamstore-a.akamaihd.net"
     ]
   },
   {
@@ -67,7 +72,7 @@
     "type": "field",
     "outboundTag": "proxy",
     "domain": [
-      "#GFWÓòÃûÁÐ±í",
+      "#GFWåŸŸååˆ—è¡¨",
       "geosite:gfw",
       "geosite:greatfire"
     ]
