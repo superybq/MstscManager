@@ -77,7 +77,7 @@ namespace MstscManager
         {
             string color = "32";
             color = ddlColor.SelectedItem.ToString();
-            string str = "start mstsc /v:" + ip;
+            string str = "start mstsc /admin /v:" + ip;
             string filePath = Path.Combine(Path.GetTempPath(), showName + ".rdp");
             if (!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(password))
             {
