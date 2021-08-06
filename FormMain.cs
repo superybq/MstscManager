@@ -86,7 +86,7 @@ namespace MstscManager
                 sw.Write(RDPData.GetRDPData(ip, userName, password, domain, txtDesktopwidth.Text, txtDesktopheight.Text, color));
                 sw.Close();
                 fs.Close();
-                str = "start mstsc " + filePath + " /console /v:" + ip;
+                str = "start mstsc " + filePath + " /admin /console /v:" + ip;
             }
 
             System.Diagnostics.Process p = new System.Diagnostics.Process();
@@ -96,6 +96,7 @@ namespace MstscManager
             p.StartInfo.RedirectStandardOutput = true;//由调用程序获取输出信息
             p.StartInfo.RedirectStandardError = true;//重定向标准错误输出
             p.StartInfo.CreateNoWindow = true;//不显示程序窗口
+            p.StartInfo.Verb = "runas";
             p.Start();//启动程序
 
             //向cmd窗口发送输入信息
