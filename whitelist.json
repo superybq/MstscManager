@@ -1,38 +1,45 @@
 [
   {
-    "outboundTag": "proxy",
+    "id": "4665995276233710225",
+    "port": "",
+    "outboundTag": "direct",
+    "ip": [],
     "domain": [
-      "#以下三行是GitHub网站，为了不影响下载速度走代理",
-      "#github.com",
-      "#githubassets.com",
-      "#githubusercontent.com"
-    ]
+      "domain:example-example.com",
+      "domain:example-example2.com"
+    ],
+    "enabled": false
   },
   {
+    "id": "5056533425785980750",
     "outboundTag": "block",
     "domain": [
-      "geosite:category-ads-all",
-      "mousegesturesapi.com",
-      "cf-se.com"
-    ]
+      "geosite:category-ads-all"
+    ],
+    "enabled": true
   },
   {
+    "id": "5585849491529114792",
+    "outboundTag": "direct",
+    "domain": [
+      "geosite:cn"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "4748800850111555200",
     "outboundTag": "direct",
     "ip": [
       "geoip:private",
       "geoip:cn"
     ],
-    "domain": [
-      "geosite:private",
-      "geosite:cn",
-      "geosite:apple-cn",
-      "geosite:google-cn",
-      "geosite:tld-cn",
-      "geosite:category-games@cn"
-    ]
+    "enabled": true
   },
   {
+    "id": "4925700476440597385",
+    "port": "",
     "outboundTag": "direct",
+    "ip": [],
     "domain": [
       "twitch.tv",
       "hls.ttvnw.net",
@@ -42,16 +49,13 @@
       "usher.ttvnw.net",
       "github.com",
       "gvt1.com"
-    ]
+    ],
+    "enabled": true
   },
   {
-    "outboundTag": "proxy",
-    "domain": [
-      "geosite:geolocation-!cn"
-    ]
-  },
-  {
+    "id": "5061640210395338180",
     "port": "0-65535",
-    "outboundTag": "proxy"
+    "outboundTag": "proxy",
+    "enabled": true
   }
 ]
